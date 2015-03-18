@@ -15,10 +15,10 @@ public/hot_music/**/*
 .DS_Store
 *.swp
 *.swo
-*.swn
-*.swm
 .rvmrc
 vendor/ruby
 doc/wiki_repo
 solr/data/
 solr/pids/
+pkg
+.gitignore
