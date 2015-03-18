@@ -23,6 +23,7 @@ Or install it yourself as:
 ## Usage
 
 Add below codes to your application.rb or a init file in config/initializers
+
     require 'xinge'   
     Xinge.configure do |config|    
       config[:android_accessId] = Your android access id    
