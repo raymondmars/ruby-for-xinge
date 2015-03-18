@@ -3,7 +3,7 @@ require 'digest'
 
 module Xinge
 
-  @xinge_config = {}
+  @xinge_config = {env: 'development'}
 
   class << self
     def configure
