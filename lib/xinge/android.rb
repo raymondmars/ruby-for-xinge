@@ -5,10 +5,10 @@ module Xinge
       super
     end
     def pushToSingleDevice(token, title, content, params={})
-      self.push_single_device(token, 1, build_simple_message(title, content))
+      self.push_single_device(token, 1, build_simple_message(title, content), params)
     end
     def pushToAllDevice(title, content, params={})
-      self.push_all_device(1, build_simple_message(title, content))
+      self.push_all_device(1, build_simple_message(title, content), params)
     end
 
     protected
