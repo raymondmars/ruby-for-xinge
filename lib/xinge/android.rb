@@ -4,19 +4,19 @@ module Xinge
     def initialize(accessId = nil, secretKey = nil, options = {})
       super
     end
-    def pushToSingleDevice(token, title, content, params={})
-      self.push_single_device(token, 1, build_simple_message(title, content), params)
+    def pushToSingleDevice(token, title, content, params={}, custom_content={})
+      self.push_single_device(token, 1, build_simple_message(title, content, custom_content), params)
     end
-    def pushToAllDevice(title, content, params={})
-      self.push_all_device(1, build_simple_message(title, content), params)
+    def pushToAllDevice(title, content, params={}, custom_content={})
+      self.push_all_device(1, build_simple_message(title, content, custom_content), params)
     end
 
     protected
 
-    def build_simple_message(title,content)
+    def build_simple_message(title, content, custom_content)
       {
         title: title, content: content, vibrate: 1
-      }.to_json
+      }.merge(custom_content).to_json
     end
   end
 end

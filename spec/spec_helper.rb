@@ -7,3 +7,4 @@ Xinge.configure do |config|
   config[:ios_accessId] = Your ios access id
   config[:ios_secretKey] = 'xxxx'
 end
+
