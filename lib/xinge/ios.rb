@@ -24,7 +24,7 @@ module Xinge
             body: content
           },
           sound: 'default',
-          badge: 5
+          badge: 1
         }
       }.merge(custom_content).to_json
     end
