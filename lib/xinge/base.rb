@@ -144,7 +144,7 @@ module Xinge
       params.merge!({ sign: sign })
       options = { body: params }
       
-      result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+      result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options).parsed_response)
       [result["ret_code"], result["err_msg"]]
     end
 
