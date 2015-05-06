@@ -7,7 +7,7 @@ module Xinge
     def pushToSingleDevice(token, msg_type, title, content, custom_content={}, params={})
       self.push_single_device(token, msg_type, build_simple_message(title, content, custom_content), params)
     end
-    def pushToAllDevice(msg_type, msg_type, title, content, custom_content={}, params={})
+    def pushToAllDevice(msg_type, title, content, custom_content={}, params={})
       self.push_all_device(msg_type, build_simple_message(title, content, custom_content), params)
     end
 
