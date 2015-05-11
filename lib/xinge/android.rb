@@ -4,11 +4,11 @@ module Xinge
     def initialize(accessId = nil, secretKey = nil, options = {})
       super
     end
-    def pushToSingleDevice(token, title, content, params={}, custom_content={})
-      self.push_single_device(token, 1, build_simple_message(title, content, custom_content), params)
+    def pushToSingleDevice(token, msg_type, title, content, custom_content={}, params={})
+      self.push_single_device(token, msg_type, build_simple_message(title, content, custom_content), params)
     end
-    def pushToAllDevice(title, content, params={}, custom_content={})
-      self.push_all_device(1, build_simple_message(title, content, custom_content), params)
+    def pushToAllDevice(msg_type, title, content, custom_content={}, params={})
+      self.push_all_device(msg_type, build_simple_message(title, content, custom_content), params)
     end
 
     protected

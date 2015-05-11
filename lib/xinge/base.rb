@@ -25,6 +25,9 @@ module Xinge
     HTTP_METHOD = :post
 
     def initialize(accessId = nil, secretKey = nil, options = {})
+      accessId ||= Xinge.config[:android_accessId]
+      secretKey ||= Xinge.config[:android_secretKey]
+
       raise 'accessId is invalid' unless accessId.is_a? Integer
       raise 'secretKey is invalid' if !secretKey.is_a?(String) or secretKey.strip.size == 0
       @accessId  =  accessId
@@ -144,7 +147,7 @@ module Xinge
       params.merge!({ sign: sign })
       options = { body: params }
       
-      result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+      result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options).parsed_response)
       [result["ret_code"], result["err_msg"]]
     end
 
