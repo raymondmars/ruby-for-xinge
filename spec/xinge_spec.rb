@@ -5,6 +5,7 @@ require 'spec_helper'
 describe Xinge do  
   before(:all) do 
     #将token环境变量预先配置到你的 .bashrc 或者 .zshrc 文件当中
+    #如果要设置多个，请用逗号分隔
     #example: export XINGE_TEST_TOKENS='xxxx,xxxx'
     @target_device_tokens = ENV['XINGE_TEST_TOKENS'].split(',')
 

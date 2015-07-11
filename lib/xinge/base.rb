@@ -145,6 +145,7 @@ module Xinge
       options = { body: params }
       
       result = JSON.parse(self.class.send(HTTP_METHOD,self.get_request_url(type,method), options))
+
       [result["ret_code"], result["err_msg"]]
     end
 
