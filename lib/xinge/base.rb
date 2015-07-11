@@ -25,11 +25,11 @@ module Xinge
     HTTP_METHOD = :post
 
     def initialize(accessId = nil, secretKey = nil, options = {})
-      raise 'accessId is invalid' unless accessId.is_a? Integer
-      raise 'secretKey is invalid' if !secretKey.is_a?(String) or secretKey.strip.size == 0
+      raise 'accessId is invalid'  unless accessId.is_a? Integer
+      raise 'secretKey is invalid' if     !secretKey.is_a?(String) or secretKey.strip.size == 0
       @accessId  =  accessId
       @secretKey =  secretKey.strip
-      @options = DEFAULT_OPTIONS.merge options
+      @options   =  DEFAULT_OPTIONS.merge options
     end
 
 
@@ -37,7 +37,7 @@ module Xinge
     def push_single_device(device_token, message_type, message, params = {})
       params.merge!({
         device_token: device_token,
-        message: message,
+        message:      message,
         message_type: message_type
         })
       self.send_request('push','single_device',params)
